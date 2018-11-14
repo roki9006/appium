@@ -1,5 +1,6 @@
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -15,7 +16,8 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
+@Epic ("Google apps")
+@Feature("Play store")
 public class AppiumTest {
 
     public AndroidDriver<AndroidElement> driver;
@@ -23,7 +25,7 @@ public class AppiumTest {
     public DesiredCapabilities capabilities;
 
     {}
-    @Test
+   // @Test
     public void testName(ITestContext context) throws MalformedURLException, InterruptedException {
 
         capabilities = new DesiredCapabilities();
@@ -64,5 +66,18 @@ public class AppiumTest {
         page.isDisplayed();
         //page.searchGames();
         Thread.sleep(10000);
+    }
+
+    @Test(groups={"smoke", "regression"})
+    @Story ("Fake smoke test")
+    public void smokeTest(){
+        System.out.println("Hello smoke");
+    }
+
+    @Test (groups={"regression"})
+    @Story ("Fake regression test")
+    @Description("opis")
+    public void regressionTest(){
+        System.out.println("Hello regression");
     }
 }

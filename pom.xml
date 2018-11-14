@@ -7,6 +7,16 @@
     <groupId>appium</groupId>
     <artifactId>appium</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+
+        <aspectj.version>1.9.2</aspectj.version>
+        <testng.version>6.14.3</testng.version>
+        <allure.version>2.8.1</allure.version>
+        <appium.version>6.1.0</appium.version>
+        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
@@ -21,11 +31,15 @@
             <version>6.1.0</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
+
 
 </project>
